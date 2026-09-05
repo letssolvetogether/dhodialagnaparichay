@@ -1,0 +1,163 @@
+/* Shared styles for the Lagna legal pages.
+   These are opened on phones from inside the app, so the priority is
+   legibility at small widths without zooming or sideways scrolling. */
+
+:root {
+  --ink: #2b2118;
+  --muted: #6b5d51;
+  --accent: #7b2d42;
+  --rule: #e6ddd2;
+  --bg: #fbf3ea; /* matches the app's splash/background colour */
+  --card: #fffaf4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f0e7dd;
+    --muted: #b5a89b;
+    --accent: #e39aac;
+    --rule: #3a3129;
+    --bg: #1a1512;
+    --card: #221c18;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px 18px 64px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+h1 {
+  font-size: 28px;
+  line-height: 1.25;
+  margin: 0 0 8px;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 1.3;
+  margin: 36px 0 10px;
+  padding-top: 4px;
+}
+
+h3 {
+  font-size: 17px;
+  margin: 24px 0 6px;
+}
+
+p,
+li {
+  margin: 0 0 14px;
+}
+
+ul,
+ol {
+  padding-left: 22px;
+}
+
+a {
+  color: var(--accent);
+}
+
+.brand {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+
+.updated {
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Used for the points people most need to actually read -- chiefly the
+   "we don't verify anyone" warning, which is the single most important
+   thing on the page for a matrimonial service. */
+.callout {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin: 22px 0;
+}
+
+.callout p:last-child,
+.callout ul:last-child,
+.callout li:last-child {
+  margin-bottom: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 15px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+th {
+  background: var(--card);
+}
+
+/* Tables can still be wider than a narrow phone -- let them scroll on their
+   own rather than pushing the whole page sideways. */
+.table-wrap {
+  overflow-x: auto;
+}
+
+nav.doc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+nav.doc-links a {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 14px 18px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-size: 15px;
+  color: var(--muted);
+}
